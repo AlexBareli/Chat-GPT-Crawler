@@ -7,10 +7,7 @@ app = Flask("USF Crawler")
 @app.route("/")
 
 def USF_Crawler():    
-    openai.api_key = "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"
-
-    run = wandb.init(project='Chat GPT Webcrawler')
-    prediction_table = wandb.Table(columns=["prompt", "completion"])
+    openai.api_key = os.getenv("OPENAI_API_KEY")
 
     gpt_prompt = "How many people live on planet earth?"
 
@@ -23,5 +20,4 @@ def USF_Crawler():
         frequency_penalty=0.0,
         presence_penalty=0.0,
     )
-    #predication_table.add_data(gpt_prompt, response['choices'][0]['text'])
     return response['choices'][0]['text']
