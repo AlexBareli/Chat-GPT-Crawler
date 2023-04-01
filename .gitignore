@@ -3,5 +3,19 @@
 .env*.local
 
 # flask environment set-up
+venv/
 .venv
-.venv*.local
+
+# stuff that comes from flask
+*.pyc
+__pycache__/
+
+instance/
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+dist/
+build/
+*.egg-info/
