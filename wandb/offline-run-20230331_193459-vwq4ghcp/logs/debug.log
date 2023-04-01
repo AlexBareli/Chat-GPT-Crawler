@@ -1,0 +1,24 @@
+2023-03-31 19:34:59,385 INFO    MainThread:2985 [wandb_setup.py:_flush():76] Configure stats pid to 2985
+2023-03-31 19:34:59,385 INFO    MainThread:2985 [wandb_setup.py:_flush():76] Loading settings from /Users/bareli/.config/wandb/settings
+2023-03-31 19:34:59,385 INFO    MainThread:2985 [wandb_setup.py:_flush():76] Loading settings from /Users/bareli/Documents/College Work/Hackathon/Chat-GPT-Crawler/wandb/settings
+2023-03-31 19:34:59,385 INFO    MainThread:2985 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-03-31 19:34:59,386 INFO    MainThread:2985 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-03-31 19:34:59,386 INFO    MainThread:2985 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'USFCrawler.py', 'program': '/Users/bareli/Documents/College Work/Hackathon/Chat-GPT-Crawler/USFCrawler.py'}
+2023-03-31 19:34:59,386 INFO    MainThread:2985 [wandb_setup.py:_flush():76] Applying login settings: {'mode': 'offline'}
+2023-03-31 19:34:59,386 INFO    MainThread:2985 [wandb_init.py:_log_setup():506] Logging user logs to /Users/bareli/Documents/College Work/Hackathon/Chat-GPT-Crawler/wandb/offline-run-20230331_193459-vwq4ghcp/logs/debug.log
+2023-03-31 19:34:59,386 INFO    MainThread:2985 [wandb_init.py:_log_setup():507] Logging internal logs to /Users/bareli/Documents/College Work/Hackathon/Chat-GPT-Crawler/wandb/offline-run-20230331_193459-vwq4ghcp/logs/debug-internal.log
+2023-03-31 19:34:59,386 INFO    MainThread:2985 [wandb_init.py:init():546] calling init triggers
+2023-03-31 19:34:59,386 INFO    MainThread:2985 [wandb_init.py:init():552] wandb.init called with sweep_config: {}
+config: {}
+2023-03-31 19:34:59,387 INFO    MainThread:2985 [wandb_init.py:init():602] starting backend
+2023-03-31 19:34:59,387 INFO    MainThread:2985 [wandb_init.py:init():606] setting up manager
+2023-03-31 19:34:59,390 INFO    MainThread:2985 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2023-03-31 19:34:59,393 INFO    MainThread:2985 [wandb_init.py:init():613] backend started and connected
+2023-03-31 19:34:59,395 INFO    MainThread:2985 [wandb_init.py:init():701] updated telemetry
+2023-03-31 19:34:59,412 INFO    MainThread:2985 [wandb_init.py:init():789] starting run threads in backend
+2023-03-31 19:34:59,448 INFO    MainThread:2985 [wandb_run.py:_console_start():2114] atexit reg
+2023-03-31 19:34:59,448 INFO    MainThread:2985 [wandb_run.py:_redirect():1969] redirect: SettingsConsole.WRAP_RAW
+2023-03-31 19:34:59,448 INFO    MainThread:2985 [wandb_run.py:_redirect():2034] Wrapping output streams.
+2023-03-31 19:34:59,448 INFO    MainThread:2985 [wandb_run.py:_redirect():2059] Redirects installed.
+2023-03-31 19:34:59,449 INFO    MainThread:2985 [wandb_init.py:init():831] run started, returning control to user process
+2023-03-31 19:35:01,014 WARNING MsgRouterThr:2985 [router.py:message_loop():77] message_loop has been closed

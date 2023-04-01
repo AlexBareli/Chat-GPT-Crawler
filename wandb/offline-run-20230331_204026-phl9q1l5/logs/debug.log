@@ -1,0 +1,50 @@
+2023-03-31 20:40:26,933 INFO    Thread-1  :3248 [wandb_setup.py:_flush():76] Configure stats pid to 3248
+2023-03-31 20:40:26,933 INFO    Thread-1  :3248 [wandb_setup.py:_flush():76] Loading settings from /Users/bareli/.config/wandb/settings
+2023-03-31 20:40:26,933 INFO    Thread-1  :3248 [wandb_setup.py:_flush():76] Loading settings from /Users/bareli/Documents/College Work/Hackathon/Temp/wandb/settings
+2023-03-31 20:40:26,933 INFO    Thread-1  :3248 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-03-31 20:40:26,933 INFO    Thread-1  :3248 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-03-31 20:40:26,933 INFO    Thread-1  :3248 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'venv/bin/flask', 'program': '/Users/bareli/Documents/College Work/Hackathon/Temp/venv/bin/flask'}
+2023-03-31 20:40:26,933 INFO    Thread-1  :3248 [wandb_setup.py:_flush():76] Applying login settings: {'mode': 'offline'}
+2023-03-31 20:40:26,933 INFO    Thread-1  :3248 [wandb_init.py:_log_setup():506] Logging user logs to /Users/bareli/Documents/College Work/Hackathon/Temp/wandb/offline-run-20230331_204026-phl9q1l5/logs/debug.log
+2023-03-31 20:40:26,933 INFO    Thread-1  :3248 [wandb_init.py:_log_setup():507] Logging internal logs to /Users/bareli/Documents/College Work/Hackathon/Temp/wandb/offline-run-20230331_204026-phl9q1l5/logs/debug-internal.log
+2023-03-31 20:40:26,934 INFO    Thread-1  :3248 [wandb_init.py:init():546] calling init triggers
+2023-03-31 20:40:26,934 INFO    Thread-1  :3248 [wandb_init.py:init():552] wandb.init called with sweep_config: {}
+config: {}
+2023-03-31 20:40:26,934 INFO    Thread-1  :3248 [wandb_init.py:init():602] starting backend
+2023-03-31 20:40:26,934 INFO    Thread-1  :3248 [wandb_init.py:init():606] setting up manager
+2023-03-31 20:40:26,937 INFO    Thread-1  :3248 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2023-03-31 20:40:26,940 INFO    Thread-1  :3248 [wandb_init.py:init():613] backend started and connected
+2023-03-31 20:40:26,943 INFO    Thread-1  :3248 [wandb_init.py:init():701] updated telemetry
+2023-03-31 20:40:26,944 INFO    Thread-1  :3248 [wandb_init.py:init():789] starting run threads in backend
+2023-03-31 20:40:26,970 INFO    Thread-1  :3248 [wandb_run.py:_console_start():2114] atexit reg
+2023-03-31 20:40:26,970 INFO    Thread-1  :3248 [wandb_run.py:_redirect():1969] redirect: SettingsConsole.WRAP_RAW
+2023-03-31 20:40:26,970 INFO    Thread-1  :3248 [wandb_run.py:_redirect():2034] Wrapping output streams.
+2023-03-31 20:40:26,970 INFO    Thread-1  :3248 [wandb_run.py:_redirect():2059] Redirects installed.
+2023-03-31 20:40:26,970 INFO    Thread-1  :3248 [wandb_init.py:init():831] run started, returning control to user process
+2023-03-31 20:40:36,048 INFO    Thread-4  :3248 [wandb_setup.py:_flush():76] Configure stats pid to 3248
+2023-03-31 20:40:36,048 INFO    Thread-4  :3248 [wandb_setup.py:_flush():76] Loading settings from /Users/bareli/.config/wandb/settings
+2023-03-31 20:40:36,048 INFO    Thread-4  :3248 [wandb_setup.py:_flush():76] Loading settings from /Users/bareli/Documents/College Work/Hackathon/Temp/wandb/settings
+2023-03-31 20:40:36,048 INFO    Thread-4  :3248 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-03-31 20:40:36,048 INFO    Thread-4  :3248 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-03-31 20:40:36,048 INFO    Thread-4  :3248 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'venv/bin/flask', 'program': '/Users/bareli/Documents/College Work/Hackathon/Temp/venv/bin/flask'}
+2023-03-31 20:40:36,048 INFO    Thread-4  :3248 [wandb_setup.py:_flush():76] Applying login settings: {'mode': 'offline'}
+2023-03-31 20:40:36,048 INFO    Thread-4  :3248 [wandb_init.py:_log_setup():506] Logging user logs to /Users/bareli/Documents/College Work/Hackathon/Temp/wandb/offline-run-20230331_204036-jsb5msre/logs/debug.log
+2023-03-31 20:40:36,048 INFO    Thread-4  :3248 [wandb_init.py:_log_setup():507] Logging internal logs to /Users/bareli/Documents/College Work/Hackathon/Temp/wandb/offline-run-20230331_204036-jsb5msre/logs/debug-internal.log
+2023-03-31 20:40:36,049 INFO    Thread-4  :3248 [wandb_init.py:init():546] calling init triggers
+2023-03-31 20:40:36,049 INFO    Thread-4  :3248 [wandb_init.py:init():552] wandb.init called with sweep_config: {}
+config: {}
+2023-03-31 20:40:36,049 INFO    Thread-4  :3248 [wandb_init.py:init():597] wandb.init() called when a run is still active
+2023-03-31 20:41:20,969 INFO    Thread-5  :3248 [wandb_setup.py:_flush():76] Configure stats pid to 3248
+2023-03-31 20:41:20,970 INFO    Thread-5  :3248 [wandb_setup.py:_flush():76] Loading settings from /Users/bareli/.config/wandb/settings
+2023-03-31 20:41:20,970 INFO    Thread-5  :3248 [wandb_setup.py:_flush():76] Loading settings from /Users/bareli/Documents/College Work/Hackathon/Temp/wandb/settings
+2023-03-31 20:41:20,970 INFO    Thread-5  :3248 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-03-31 20:41:20,970 INFO    Thread-5  :3248 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-03-31 20:41:20,970 INFO    Thread-5  :3248 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'venv/bin/flask', 'program': '/Users/bareli/Documents/College Work/Hackathon/Temp/venv/bin/flask'}
+2023-03-31 20:41:20,970 INFO    Thread-5  :3248 [wandb_setup.py:_flush():76] Applying login settings: {'mode': 'offline'}
+2023-03-31 20:41:20,970 INFO    Thread-5  :3248 [wandb_init.py:_log_setup():506] Logging user logs to /Users/bareli/Documents/College Work/Hackathon/Temp/wandb/offline-run-20230331_204120-456s8ckd/logs/debug.log
+2023-03-31 20:41:20,970 INFO    Thread-5  :3248 [wandb_init.py:_log_setup():507] Logging internal logs to /Users/bareli/Documents/College Work/Hackathon/Temp/wandb/offline-run-20230331_204120-456s8ckd/logs/debug-internal.log
+2023-03-31 20:41:20,971 INFO    Thread-5  :3248 [wandb_init.py:init():546] calling init triggers
+2023-03-31 20:41:20,971 INFO    Thread-5  :3248 [wandb_init.py:init():552] wandb.init called with sweep_config: {}
+config: {}
+2023-03-31 20:41:20,971 INFO    Thread-5  :3248 [wandb_init.py:init():597] wandb.init() called when a run is still active
+2023-03-31 20:42:06,529 WARNING MsgRouterThr:3248 [router.py:message_loop():77] message_loop has been closed

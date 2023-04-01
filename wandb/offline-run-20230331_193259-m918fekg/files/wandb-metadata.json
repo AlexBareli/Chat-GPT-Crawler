@@ -1,0 +1,28 @@
+{
+    "os": "macOS-13.3-arm64-arm-64bit",
+    "python": "3.9.6",
+    "heartbeatAt": "2023-04-01T02:32:59.372148",
+    "startedAt": "2023-04-01T02:32:59.342576",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/bareli/Documents/College Work/Hackathon/Temp/USFCrawler.py",
+    "codePath": "USFCrawler.py",
+    "host": "barelis-air.ds.usfca.edu",
+    "username": "bareli",
+    "executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "disk": {
+        "total": 228.27386474609375,
+        "used": 8.456645965576172
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 16.0
+    }
+}

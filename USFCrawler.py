@@ -1,24 +1,27 @@
 import os
 import openai
 import wandb
+from flask import Flask
 
-openai.api_key = "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"
+app = Flask("USF Crawler")
+@app.route("/")
 
-run = wandb.init(project='Chat GPT Webcrawler')
-prediction_table = wandb.Table(columns=["prompt", "completion"])
+def USF_Crawler():    
+    openai.api_key = "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"
 
-gpt_prompt = "When is spring break for USF?"
+    run = wandb.init(project='Chat GPT Webcrawler')
+    prediction_table = wandb.Table(columns=["prompt", "completion"])
 
-response = openai.Completion.create(
-    engine="text-davinci-002",
-    prompt=gpt_prompt,
-    temperature=0.5,
-    max_tokens=256,
-    top_p=1.0,
-    frequency_penalty=0.0,
-    presence_penalty=0.0,
-)
+    gpt_prompt = "How many people live on planet earth?"
 
-print(response['choices'][0]['text'])
-
-predication_table.add_data(gpt_prompt, response['choices'][0]['text'])
+    response = openai.Completion.create(
+        engine="text-davinci-002",
+        prompt=gpt_prompt,
+        temperature=0.5,
+        max_tokens=256,
+        top_p=1.0,
+        frequency_penalty=0.0,
+        presence_penalty=0.0,
+    )
+    #predication_table.add_data(gpt_prompt, response['choices'][0]['text'])
+    return response['choices'][0]['text']
