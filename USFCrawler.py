@@ -12,16 +12,17 @@ def homepage():
 @app.route("/response", methods=['POST'])
 def response():    
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    gpt_prompt = request.form['Question']
+    gpt_prompt = "Scrape https://www.usfca.edu/ for " + request.form['Question']
 
     response = openai.Completion.create(
-        engine="text-davinci-002",
+        engine="text-davinci-003",
         prompt=gpt_prompt,
-        temperature=0.5,
-        max_tokens=256,
-        top_p=1.0,
-        frequency_penalty=0.0,
-        presence_penalty=0.0,
+        temperature=0,
+        max_tokens=200,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0,
+        stop=None
     )
     return response['choices'][0]['text']
 

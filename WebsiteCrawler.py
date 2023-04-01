@@ -20,7 +20,7 @@ class Crawler:
         soup = BeautifulSoup(html, 'html.parser')
         for link in soup.find_all('a'):
             path = link.get('href')
-            if path and path.startswith('/') and url.startswith('https://www.usfca.edu'):
+            if path and path.startswith('/'):
                 path = urljoin(url, path)
             yield path
 
