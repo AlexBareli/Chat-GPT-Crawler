@@ -1,15 +1,18 @@
 import os
 import openai
 import wandb
-from flask import Flask
+from flask import Flask, request, render_template
 
 app = Flask("USF Crawler")
+
 @app.route("/")
+def homepage():
+    return render_template('USFCrawler.html')
 
-def USF_Crawler():    
+@app.route("/response", methods=['POST'])
+def response():    
     openai.api_key = os.getenv("OPENAI_API_KEY")
-
-    gpt_prompt = "How many people live on planet earth?"
+    gpt_prompt = request.form['Question']
 
     response = openai.Completion.create(
         engine="text-davinci-002",
@@ -21,3 +24,12 @@ def USF_Crawler():
         presence_penalty=0.0,
     )
     return response['choices'][0]['text']
+
+@app.route('/input/', methods=['POST', 'GET'])
+def input():
+    if request.method == 'POST':
+        question = request.form['Question']
+        return response()
+    if request.method == 'GET':
+        return f"Cannot get a valid input"
+
