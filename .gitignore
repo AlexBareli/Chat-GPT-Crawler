@@ -1,0 +1,7 @@
+# local env files
+.env
+.env*.local
+
+# flask environment set-up
+.venv
+.venv*.local
