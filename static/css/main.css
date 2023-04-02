@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700;800;900;1000&display=swap');
+
+h1 {
+    /* Title */
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 90%;
+    /* identical to box height, or 58px */
+    color: #000000;
+    font-variation-settings: 'MONO' 0, 'CASL' 0, 'slnt' 0, 'CRSV' 1;
+}
+
+h2 {
+    /* Header 2 */
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 150%;
+    /* identical to box height, or 60px */
+    letter-spacing: -0.02em;
+    color: #000000;
+}
+
+h3 {
+    /* Header 3 */
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 170%;
+    /* identical to box height, or 41px */
+    letter-spacing: -0.02em;
+    color: #000000;
+}
+
+h4 {
+    /* Pre-Title */
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 160%;
+    /* or 19px */
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #000000;
+    font-variation-settings: 'MONO' 1, 'CASL' 0, 'slnt' 0, 'CRSV' 0;
+}
+
+h5 {
+    /* Subtitle */
+    font-family: 'Recursive';
+    /*font-style: italic;*/
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 160%;
+    /* identical to box height, or 32px */
+    color: #000000;
+    font-variation-settings: 'MONO' 1, 'CASL' 0, 'slnt' -15, 'CRSV' 1;
+}
