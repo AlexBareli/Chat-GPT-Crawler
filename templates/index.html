@@ -1,82 +1,130 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<style>
-    h1 { /*Welcome to Tunnel */
-        position: absolute;
-        width: 953px;
-        height: 162px;
-        left: 244px;
-        top: 50px;
+    <style>
+        body {
+            background: black;
+        }
 
-        font-family: 'Recursive';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 96px;
-        line-height: 90%;
-        /* or 86px */
+        .container {
+            display: inline-block;
+        }
 
-        display: flex;
-        align-items: center;
-        text-align: center;
+        .text {
+            color: white;
+            position: absolute;
+            width: 825px;
+            height: 32px;
+            left: 300px;
+            top: 215px;
 
-        /* Shadow */
-        color: #000000;
-        font-variation-settings: 'MONO' 0, 'CASL' 0, 'slnt' 0, 'CRSV' 1;
-        text-shadow: 0px 7px 4px rgba(0, 0, 0, 0.25);
-    }
+            font-family: 'Recursive';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 160%;
+            /* identical to box height, or 32px */
 
-    h4 { /*The AI ready to assist you*/
-        position: absolute;
-        width: 905px;
-        height: 32px;
-        left: 268px;
-        top: 230px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            border-right: 2px solid;
+            /*width: 100%;*/
+            white-space: nowrap;
+            overflow: hidden;
+            animation:
+                typing 3s steps(73),
+                cursor .4s step-end infinite alternate;
+        }
 
-        font-family: 'Recursive';
-        font-style: normal;
-        font-weight: 800;
-        font-size: 20px;
-        line-height: 160%;
-        /* identical to box height, or 32px */
+        /*cursor blinking*/
+        @keyframes cursor {
+            50% {
+                border-color: transparent
+            }
+        }
 
-        display: flex;
-        align-items: center;
-        text-align: center;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
+        /*typing effect*/
+        @keyframes typing {
+            from {
+                width: 0
+            }
+        }
 
-        color: #000000;
-        font-variation-settings: 'MONO' 1, 'CASL' 0, 'slnt' 0, 'CRSV' 0;
-    }
-    img {
-        position: absolute;
-        width: 138px;
-        height: 189.02px;
-        left: 651px;
-        top: 330px;
+        h1 {
+            position: absolute;
+            width: 560px;
+            height: 86px;
+            left: 265px;
+            top: 90px;
+            font-family: 'Recursive';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 96px;
+            line-height: 90%;
+            /* or 86px */
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #FFFFFF;
+            font-variation-settings: 'MONO' 0, 'CASL' 0, 'slnt' 0, 'CRSV' 1;
+        }
 
-        /*filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.25));*/
-    }
-</style>
+        h2 {
+            position: absolute;
+            width: 320px;
+            height: 86px;
+            left: 854px;
+            top: 75px;
+
+            font-family: 'Recursive';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 96px;
+            line-height: 90%;
+            /* or 86px */
+            display: flex;
+            align-items: center;
+            text-align: center;
+            /* Mustard */
+            background: linear-gradient(0deg, #FFAD00 0%, rgba(255, 198, 77, 0.752083) 29.69%, rgba(254, 222, 155, 0.48125) 62.13%, rgba(255, 235, 194, 0.257292) 88.95%, rgba(255, 255, 255, 0) 119.77%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            font-variation-settings: 'MONO' 0, 'CASL' 0, 'slnt' 0, 'CRSV' 1;
+        }
+
+        img {
+            position: absolute;
+            width: 138px;
+            height: 189.02px;
+            left: 651px;
+            top: 300px;
+        }
+    </style>>
 {% endblock %}
 
-
 {% block body %}
-<h1>Welcome to Tunnel</h1>
-<h4>the ai ready to assist you for the university of san francisco questions</h4>
-<img src="{{ url_for('static', filename='images/GreenTunnelLogo.jpg')}}">
-<form action="/result" method="post">
-    <style>
-    .full-page-button {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        border: none;
-    }
-    </style>
-    <button class="full-page-button"></button>
-</form>
+    <h1>Welcome to</h1>
+    <h2>Tunnel</h2>
+    <div class="container">
+        <h4 class="text">the ai ready to assist you for the university of san francisco questions.</h4>
+    </div>
+    <img src="{{ url_for('static', filename='images/YellowTunnelLogo.svg')}}">
+    <form action="/result" method="post">
+        <style>
+        .full-page-button {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+        }
+        </style>
+        <button class="full-page-button"></button>
+    </form>
 {% endblock %}

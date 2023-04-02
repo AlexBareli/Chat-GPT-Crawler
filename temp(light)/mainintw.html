@@ -1,0 +1,302 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+    h1 {
+        position: absolute;
+        width: 370px;
+        height: 58px;
+        left: 222px;
+        top: 20px;
+
+        /* Title */
+        font-family: 'Recursive';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 90%;
+        /* identical to box height, or 58px */
+
+        /* Shadow */
+        color: #000000;
+        font-variation-settings: 'MONO' 0, 'CASL' 0, 'slnt' 0, 'CRSV' 1;
+    }
+
+    img {
+        position: absolute;
+        width: 194px;
+        height: 59px;
+        left: 605px;
+        top: 65px;
+        background: url(USFLogo.png);
+    }
+
+    .examples {
+        position: absolute;
+        width: 110px;
+        height: 41px;
+        left: 225px;
+        top: 100px;
+
+        /* Header 3 */
+        font-family: 'Recursive';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 170%;
+
+        /* identical to box height, or 41px */
+        letter-spacing: -0.02em;
+        color: #000000;
+    }
+
+    .example1 {
+        /* Slanted WB */
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px;
+        position: absolute;
+        width: 237.99px;
+        height: 70.68px;
+        left: 256.99px;
+        top: 130px;
+        border: 2px solid #050505;
+        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
+        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
+    }
+
+    .example2 {
+        /* Slanted WB */
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px;
+        position: absolute;
+        width: 300.99px;
+        height: 106.02px;
+        left: 536.99px;
+        top: 130px;
+        border: 2px solid #050505;
+        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
+        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
+    }
+
+    .example3 {
+        /* Slanted WB */
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px;
+        position: absolute;
+        width: 285.99px;
+        height: 70.68px;
+        left: 883.99px;
+        top: 130px;
+        border: 2px solid #050505;
+        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
+        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
+    }
+
+    .capa {
+        /* Capabilites */
+        position: absolute;
+        width: 131px;
+        height: 41px;
+        left: 225px;
+        top: 255px;
+
+        /* Header 3 */
+        font-family: 'Recursive';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 170%;
+        /* identical to box height, or 41px */
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: #000000;
+    }
+
+    .capa1 {
+        /* Slanted WB */
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px;
+        position: absolute;
+        width: 237.99px;
+        height: 70.68px;
+        left: 251.99px;
+        top: 285px;
+        border: 2px solid #050505;
+        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
+        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
+    }
+
+    .capa2 {
+        /* Slanted WB */
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px;
+        position: absolute;
+        width: 312.99px;
+        height: 106.02px;
+        left: 536.99px;
+        top: 285px;
+        border: 2px solid #050505;
+        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
+        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
+    }
+
+    .limits {
+        /* Limitations */
+        position: absolute;
+        width: 133px;
+        height: 41px;
+        left: 222px;
+        top: 410px;
+
+        /* Header 3 */
+        font-family: 'Recursive';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 170%;
+        /* identical to box height, or 41px */
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: #000000;
+    }
+
+    .limit1 {
+        /* Slanted WB */
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px;
+        position: absolute;
+        width: 297.99px;
+        height: 70.68px;
+        left: 251.99px;
+        top: 440px;
+        border: 2px solid #050505;
+        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
+        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
+    }
+
+    .limit2 {
+        /* Slanted WB */
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px;
+        position: absolute;
+        width: 261.99px;
+        height: 70.68px;
+        left: 591.99px;
+        top: 440px;
+        border: 2px solid #050505;
+        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
+        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
+    }
+
+    .limit3 {
+        /* Slanted WB */
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px;
+        position: absolute;
+        width: 297.99px;
+        height: 70.68px;
+        left: 895.99px;
+        top: 440px;
+        border: 2px solid #050505;
+        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
+        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
+    }
+
+    .next {
+        /* Slanted WB */
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px;
+        position: absolute;
+        width: 187px;
+        height: 35.34px;
+        left: 237px;
+        top: 565px;
+        border: 2px solid #050505;
+        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
+        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
+    }
+</style>
+{% endblock %}
+
+
+{% block body %}
+<h1>Chat GPT @</h1>
+<img src="{{ url_for('static', filename='images/USFLogo.jpg') }}">
+
+<h3 class="examples">Examples</h3>
+<h5 class="example1">When is Spring Break?</h5>
+<h5 class="example2">What are the major requirements for Computer Science?</h5>
+<h5 class="example3">What is a professor's email?</h5>
+
+<h3 class="capa">Capabilities</h3>
+<h5 class="capa1">Gives specific information.</h5>
+<h5 class="capa2">Gives quick answers without having to manually crawl web.</h5>
+
+<h3 class="limits">Limitations</h3>
+<h5 class="limit1">Sometimes produces inaccurate results.</h5>
+<h5 class="limit2">Only USF related questions.</h5>
+<h5 class="limit3">Will sometimes read outdated pages.</h5>
+<form action="/prompt" method="post">
+<button class="next"><h5>Get Started</h5></button>
+</form>
+
+
+{% endblock %}

@@ -1,302 +1,430 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<style>
-    h1 {
-        position: absolute;
-        width: 370px;
-        height: 58px;
-        left: 222px;
-        top: 20px;
+    <style>
+        body {
+            background: black;
+        }
 
-        /* Title */
-        font-family: 'Recursive';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 64px;
-        line-height: 90%;
-        /* identical to box height, or 58px */
+        h1 {
+            position: absolute;
+            width: 370px;
+            height: 58px;
+            left: 100px;
+            top: 20px;
 
-        /* Shadow */
-        color: #000000;
-        font-variation-settings: 'MONO' 0, 'CASL' 0, 'slnt' 0, 'CRSV' 1;
-    }
+            /* Title */
+            font-family: 'Recursive';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 64px;
+            line-height: 90%;
+            /* identical to box height, or 58px */
 
-    img {
+            /* Shadow */
+            color: #ffffff;
+            font-variation-settings: 'MONO' 0, 'CASL' 0, 'slnt' 0, 'CRSV' 1;
+        }
+
+        img {
         position: absolute;
         width: 194px;
         height: 59px;
-        left: 605px;
+        left: 483px;
         top: 65px;
-        background: url(USFLogo.png);
-    }
+        /*background: url(USFLogo.png);*/
+        }
 
-    .examples {
-        position: absolute;
-        width: 110px;
-        height: 41px;
-        left: 225px;
-        top: 100px;
+        .collapsible {
+            max-width: 2000px;
+            overflow: hidden;
+            font-weight: 500;
+        }
+        .collapsible input {
+            display: none;
+        }
+        .collapsible label { /*tab box*/
+            position: relative;
+            font-weight: 600;
+            color: #FFF;
+            display: block;
+            cursor: pointer;
+            /*padding: 10px 15px;*/
+            padding: 5px 10px;
+            border: 2px solid #FFF;
+            border-radius: 10px 10px 0px 0px;
+            z-index: 1;
+            width: 136px;
+            text-align: center;
+            position: absolute;
+            left: 130px;
+            font-family: 'Recursive';
+            /*font-style: italic;*/
+            font-weight: 364;
+            font-size: 20px;
+            line-height: 160%;
+            top: -45px;
+            /* identical to box height, or 32px */
+            font-variation-settings: 'MONO' 1, 'CASL' 0, 'slnt' -15, 'CRSV' 1;
+        }
 
-        /* Header 3 */
-        font-family: 'Recursive';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 170%;
+        .collapsible label:hover {
+            background: linear-gradient(0deg, #00543C 0%, rgba(0, 84, 60, 0) 113.57%);
+            position: relative;
+            font-weight: 600;
+            color: #FFF;
+            display: block;
+            cursor: pointer;
+            /*padding: 10px 15px;*/
+            padding: 5px 10px;
+            border: 2px solid #FFF;
+            border-radius: 10px 10px 0px 0px;
+            z-index: 1;
+            width: 136px;
+            text-align: center;
+            position: absolute;
+            left: 130px;
+            font-family: 'Recursive';
+            /*font-style: italic;*/
+            font-weight: 364;
+            font-size: 20px;
+            line-height: 160%;
+            top: -45px;
+            /* identical to box height, or 32px */
+            font-variation-settings: 'MONO' 1, 'CASL' 0, 'slnt' -15, 'CRSV' 1;
+        }
+        .collapsible label:after {
+            content: "";
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            width: 18px;
+            height: 18px;
+        }
+        .collapsible-text { /*when in break*/
+            max-height: 1px;
+            overflow: hidden;
+            border-radius: 4px;
+            line-height: 1.4;
+            color: #ffffff;
+            position: relative;
+            top: -100%;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+        .collapsible input:checked ~ .collapsible-text { /*box around break*/
+            max-height: 300px;
+            border: 2px solid #ffffff;
+            border-radius: 15px;
+            opacity: 1;
+            top: 0;
+            left: 100px;
+            position: relative;
+            width: 1196px;
 
-        /* identical to box height, or 41px */
-        letter-spacing: -0.02em;
-        color: #000000;
-    }
 
-    .example1 {
-        /* Slanted WB */
-        box-sizing: border-box;
+        }
+        .collapsible-text p { /*text in box*/
+            padding-left: 15px;
+            padding-right: 15px;
+            font-family: 'Recursive';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 160%;
+            /* identical to box height, or 32px */
+            font-variation-settings: 'MONO' 0, 'CASL' 0, 'slnt' 0, 'CRSV' 0.5;
+        }
+        .wrapper {
+            top: 55px;
+            position: relative;
+        }
 
-        /* Auto layout */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 20px;
-        position: absolute;
-        width: 237.99px;
-        height: 70.68px;
-        left: 256.99px;
-        top: 130px;
-        border: 2px solid #050505;
-        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
-        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
-    }
+        /* SECOND COLL BOX */
+        .collapsible2 {
+            max-width: 2000px;
+            overflow: hidden;
+            font-weight: 500;
+        }
 
-    .example2 {
-        /* Slanted WB */
-        box-sizing: border-box;
+        .collapsible2 input {
+            display: none;
+        }
 
-        /* Auto layout */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 20px;
-        position: absolute;
-        width: 300.99px;
-        height: 106.02px;
-        left: 536.99px;
-        top: 130px;
-        border: 2px solid #050505;
-        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
-        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
-    }
+        .collapsible2 label { /* tab box */
+            position: relative;
+            font-weight: 600;
+            color: white;
+            display: block;
+            cursor: pointer;
+            /*padding: 10px 20px;*/
+            padding: 5px 10px;
+            border: 2px solid #fff;
+            border-radius: 10px 10px 0px 0px;
+            z-index: 1;
+            width: 184px;
+            left: 130px;
+            font-family: 'Recursive';
+            /*font-style: italic;*/
+            font-weight: 364;
+            font-size: 20px;
+            line-height: 160%;
+            text-align: center;
+            /* identical to box height, or 32px */
+            font-variation-settings: 'MONO' 1, 'CASL' 0, 'slnt' -15, 'CRSV' 1;
+        }
 
-    .example3 {
-        /* Slanted WB */
-        box-sizing: border-box;
+        .collapsible2 label:hover {
+            background: linear-gradient(0deg, #00543C 0%, rgba(0, 84, 60, 0) 113.57%);
+            position: relative;
+            font-weight: 600;
+            color: white;
+            display: block;
+            cursor: pointer;
+            /*padding: 10px 20px;*/
+            padding: 5px 10px;
+            border: 2px solid #fff;
+            border-radius: 10px 10px 0px 0px;
+            z-index: 1;
+            width: 184px;
+            left: 130px;
+            font-family: 'Recursive';
+            /*font-style: italic;*/
+            font-weight: 364;
+            font-size: 20px;
+            line-height: 160%;
+            text-align: center;
+            /* identical to box height, or 32px */
+            font-variation-settings: 'MONO' 1, 'CASL' 0, 'slnt' -15, 'CRSV' 1;
+        }
 
-        /* Auto layout */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 20px;
-        position: absolute;
-        width: 285.99px;
-        height: 70.68px;
-        left: 883.99px;
-        top: 130px;
-        border: 2px solid #050505;
-        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
-        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
-    }
+        .collapsible2 label:after {
+            content: "";
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            width: 18px;
+            height: 18px;
+        }
 
-    .capa {
-        /* Capabilites */
-        position: absolute;
-        width: 131px;
-        height: 41px;
-        left: 225px;
-        top: 255px;
+        .collapsible-text2 {
+            max-height: 1px;
+            overflow: hidden;
+            border-radius: 4px;
+            line-height: 1.4;
+            position: relative;
+            top: -100%;
+            opacity: 0.5s;
+            transition: all 0.3s ease;
+        }
 
-        /* Header 3 */
-        font-family: 'Recursive';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 170%;
-        /* identical to box height, or 41px */
-        display: flex;
-        align-items: center;
-        text-align: center;
-        letter-spacing: -0.02em;
-        color: #000000;
-    }
+        .collapsible2 input:checked ~ .collapsible-text2 { /* content box */
+            max-height: 300px;
+            border: 2px solid #fff;
+            border-radius: 15px;
+            color: white;
+            opacity: 1;
+            top: 0;
+            left: 100px;
+            width: 1196px;
+        }
 
-    .capa1 {
-        /* Slanted WB */
-        box-sizing: border-box;
+        .collapsible-text2 p {
+            padding-left: 15px;
+            padding-right: 15px;
+            font-family: 'Recursive';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 160%;
+            /* identical to box height, or 32px */
+            font-variation-settings: 'MONO' 0, 'CASL' 0, 'slnt' 0, 'CRSV' 0.5;
+        }
 
-        /* Auto layout */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 20px;
-        position: absolute;
-        width: 237.99px;
-        height: 70.68px;
-        left: 251.99px;
-        top: 285px;
-        border: 2px solid #050505;
-        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
-        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
-    }
+        .wrapper2 {
+            position: relative;
+            top: 70px;
+        }
 
-    .capa2 {
-        /* Slanted WB */
-        box-sizing: border-box;
+        /* COLL BLOCK THREE */
+        .collapsible3 {
+            max-width: 2000px;
+            overflow: hidden;
+            font-weight: 500;
+        }
 
-        /* Auto layout */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 20px;
-        position: absolute;
-        width: 312.99px;
-        height: 106.02px;
-        left: 536.99px;
-        top: 285px;
-        border: 2px solid #050505;
-        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
-        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
-    }
+        .collapsible3 input {
+            display: none;
+        }
 
-    .limits {
-        /* Limitations */
-        position: absolute;
-        width: 133px;
-        height: 41px;
-        left: 222px;
-        top: 410px;
+        .collapsible3 label { /* tab box */
+            position: relative;
+            font-weight: 600;
+            color: white;
+            display: block;
+            cursor: pointer;
+            /*padding: 10px 20px;*/
+            padding: 5px 10px;
+            border: 2px solid #fff;
+            border-radius: 10px 10px 0px 0px;
+            z-index: 1;
+            width: 184px;
+            left: 130px;
+            font-family: 'Recursive';
+            /*font-style: italic;*/
+            font-weight: 364;
+            font-size: 20px;
+            line-height: 160%;
+            text-align: center;
+            /* identical to box height, or 32px */
+            font-variation-settings: 'MONO' 1, 'CASL' 0, 'slnt' -15, 'CRSV' 1;
+        }
 
-        /* Header 3 */
-        font-family: 'Recursive';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 170%;
-        /* identical to box height, or 41px */
-        display: flex;
-        align-items: center;
-        text-align: center;
-        letter-spacing: -0.02em;
-        color: #000000;
-    }
+        .collapsible3 label:hover {
+            position: relative;
+            font-weight: 600;
+            color: white;
+            display: block;
+            cursor: pointer;
+            /*padding: 10px 20px;*/
+            padding: 5px 10px;
+            border: 2px solid #fff;
+            border-radius: 10px 10px 0px 0px;
+            z-index: 1;
+            width: 184px;
+            left: 130px;
+            font-family: 'Recursive';
+            /*font-style: italic;*/
+            font-weight: 364;
+            font-size: 20px;
+            line-height: 160%;
+            text-align: center;
+            /* identical to box height, or 32px */
+            font-variation-settings: 'MONO' 1, 'CASL' 0, 'slnt' -15, 'CRSV' 1;
+            background: linear-gradient(0deg, #00543C 0%, rgba(0, 84, 60, 0) 113.57%);
+        }
 
-    .limit1 {
-        /* Slanted WB */
-        box-sizing: border-box;
+        .collapsible3 label:after {
+            content: "";
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            width: 18px;
+            height: 18px;
+        }
 
-        /* Auto layout */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 20px;
-        position: absolute;
-        width: 297.99px;
-        height: 70.68px;
-        left: 251.99px;
-        top: 440px;
-        border: 2px solid #050505;
-        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
-        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
-    }
+        .collapsible-text3 {
+            max-height: 1px;
+            overflow: hidden;
+            border-radius: 4px;
+            line-height: 1.4;
+            position: relative;
+            top: -100%;
+            opacity: 0.5s;
+            transition: all 0.3s ease;
+        }
 
-    .limit2 {
-        /* Slanted WB */
-        box-sizing: border-box;
+        .collapsible3 input:checked ~ .collapsible-text3 { /* content box */
+            max-height: 300px;
+            border: 2px solid #fff;
+            border-radius: 15px;
+            color: white;
+            opacity: 1;
+            top: 0;
+            left: 100px;
+            width: 1196px;
+        }
 
-        /* Auto layout */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 20px;
-        position: absolute;
-        width: 261.99px;
-        height: 70.68px;
-        left: 591.99px;
-        top: 440px;
-        border: 2px solid #050505;
-        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
-        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
-    }
+        .collapsible-text3 p {
+            padding-left: 15px;
+            padding-right: 15px;
+            font-family: 'Recursive';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 160%;
+            /* identical to box height, or 32px */
+            font-variation-settings: 'MONO' 0, 'CASL' 0, 'slnt' 0, 'CRSV' 0.5;
+        }
 
-    .limit3 {
-        /* Slanted WB */
-        box-sizing: border-box;
+        .wrapper3 {
+            position: relative;
+            top: 85px;
+        }
 
-        /* Auto layout */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 20px;
-        position: absolute;
-        width: 297.99px;
-        height: 70.68px;
-        left: 895.99px;
-        top: 440px;
-        border: 2px solid #050505;
-        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
-        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
-    }
+        h5 {
+            position: relative;
+            color: white;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            padding: 10px 15px;
+            width: 180px;
+            text-align: center;
+            left: 750px;
+            top: 33px;
+        }
 
-    .next {
-        /* Slanted WB */
-        box-sizing: border-box;
-
-        /* Auto layout */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 20px;
-        position: absolute;
-        width: 187px;
-        height: 35.34px;
-        left: 237px;
-        top: 565px;
-        border: 2px solid #050505;
-        filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
-        transform: matrix(1, 0, -0.42, 0.91, 0, 0);
-    }
-</style>
+        h5:hover {
+            position: relative;
+            color: white;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            padding: 10px 15px;
+            width: 180px;
+            text-align: center;
+            left: 750px;
+            top: 33px;
+            background: linear-gradient(262.68deg, #FDBB30 0%, #00543C 100%);
+        }
+        
+        .next { /* SOOOOSSSS BUTTON LEAVES TRACE???*/
+            background-color: transparent;
+            display: contents;
+        }
+    </style>
 {% endblock %}
 
-
 {% block body %}
-<h1>Chat GPT @</h1>
-<img src="{{ url_for('static', filename='images/USFLogo.jpg') }}">
+    <h1>Chat GPT @</h1>
+    <img src="{{ url_for('static', filename='images/USFLogo.svg') }}">
+    <form action="/prompt" method="post">
+        <button class="next"><h5>Get started &rarr;</h5></button>
+    </form>
+    
+    <div class="wrapper">
+        <div class="collapsible">
+            <input type="checkbox" id="collapsible-head">
+            <label for="collapsible-head">Examples</label>
+            <div class="collapsible-text">
+                <p>&bull; When is Spring Break? <br>
+                    &bull; What are the major requirements for Computer Science? <br>
+                    &bull; What is a professor's email?</p>
+            </div>
+        </div>
+    </div>
 
-<h3 class="examples">Examples</h3>
-<h5 class="example1">When is Spring Break?</h5>
-<h5 class="example2">What are the major requirements for Computer Science?</h5>
-<h5 class="example3">What is a professor's email?</h5>
+    <div class="wrapper2">
+        <div class="collapsible2">
+            <input type="checkbox" id="collapsible-head2">
+            <label for="collapsible-head2">Capabilities</label>
+            <div class="collapsible-text2">
+                <p>&bull; Gives specific information. <br>
+                    &bull; Gives quick answers without having to manually crawl the webpage. <br>
+                    &bull; SOMETHING</p>
+            </div>
+        </div>
+    </div>
 
-<h3 class="capa">Capabilities</h3>
-<h5 class="capa1">Gives specific information.</h5>
-<h5 class="capa2">Gives quick answers without having to manually crawl web.</h5>
-
-<h3 class="limits">Limitations</h3>
-<h5 class="limit1">Sometimes produces inaccurate results.</h5>
-<h5 class="limit2">Only USF related questions.</h5>
-<h5 class="limit3">Will sometimes read outdated pages.</h5>
-<form action="/prompt" method="post">
-<button class="next"><h5>Get Started</h5></button>
-</form>
-
+    <div class="wrapper3">
+        <div class="collapsible3">
+            <input type="checkbox" id="collapsible-head3">
+            <label for="collapsible-head3">Limitations</label>
+            <div class="collapsible-text3">
+                <p>&bull; Sometimes produces inaccurate results. <br> 
+                    &bull; Restricted to only USF related questions. <br>
+                    &bull; Will sometimes crawl outdated pages, yielding outdated responses.</p>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

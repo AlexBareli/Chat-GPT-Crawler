@@ -1,63 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Response Page</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block head %}
     <style>
-        .answerBlock{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            padding: 16px 15px;
-            gap: 10px;
-            position: absolute;
-            width: 711px;
-            height: 332px;
-            left: 364px;
-            top: 144px;
-            background: #00543C;
-            border-radius: 10px;
-            color: #FFFFFF;
-            
+        body {
+            background: black;
         }
-        .text{
-            padding: 16px 15px;
-            gap: 10px;
-            position: absolute;
-            width: 711px;
-            height: 332px;
-            left: 364px;
-            top: 144px;
-            border-radius: 10px;
-            color: #FFFFFF;
+
+        .block {
+            position: relative;
+            margin: 10% auto 0;
+            width: 50%;
+            height: 400px;
+            border-radius: 20px;
+            background: linear-gradient(0deg, black, rgb(56, 56, 56) )
         }
-        .backButton{
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 0px 20px;
+
+        .glow::before , .glow::after{
+            content: '';
             position: absolute;
-            width: 128.97px;
-            height: 62.95px;
-            left: 638.71px;
-            top: 512px;
-            border: 2px solid #050505;
-            filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.27));
-            transform: matrix(1, 0, -0.42, 0.91, 0, 0);
+            left: -2px;
+            top: -2px;
+            background: linear-gradient(45deg, #00543C, #FDBB30);
+            background-size: 400%;
+            border-radius: 20px;
+            width: calc(100% + 5px);
+            height: calc(100% + 5px);
+            z-index: -1;
+            animation: animate 20s linear infinite;
+        }
+
+        @keyframes animate{
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 400% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .glow::after {
+            filter: blur(40px);
+            opacity: .8;
+        }
+
+        h5 {
+            color: white;
+            position: relative;
+            left: 666px;
+            width: 120px;
+            top: -120px;
+            padding: 5px 10px;
+            text-align: center;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            font-family: 'Recursive';
+            /*font-style: italic;*/
+            font-weight: 364;
+            font-size: 20px;
+            line-height: 160%;
+            /* identical to box height, or 32px */
+            font-variation-settings: 'MONO' 1, 'CASL' 0, 'slnt' -15, 'CRSV' 1;
+        }
+
+        .backButton {
+            background: transparent;
+            display: contents;
+        }
+
+        .text {
+            font-size: 25px;
+            color: white;
+            font-family: 'Recursive';
+            /*font-style: italic;*/
+            position: relative;
+            font-weight: 300;
+            font-size: 16px;
+            height: 150px;
+            line-height: 160%;
+            width: 50%;
+            left: 372px;
+            top: -390px;
+            /* identical to box height, or 32px */
+            font-variation-settings: 'MONO' 1, 'CASL' 0, 'slnt' -15, 'CRSV' 1;
+
         }
     </style>
-    <div class="answerBlock"></div>
-    <div class="text" style="font-size: 25px">{{response}}</div>
+{% endblock %}
+
+{% block body %}
+    <div class="block glow"></div>
+    <div class="text" style="font-size: 20px">{{response}}</div>
     <form action="/prompt" method="post">
-        <button class="backButton">Back</button>
+        <button class="backButton"><h5>&larr; Go Back</h5></button>
     </form>
-
-
-</body>
-</html>
+{% endblock %}

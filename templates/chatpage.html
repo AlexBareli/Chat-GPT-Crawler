@@ -1,78 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Page</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block head %}
     <style>
-        .questionBOX{
-            box-sizing: border-box;
-
-            position: absolute;
-            width: 929px;
-            height: 82px;
-            left: 255px;
-            top: 471px;
-            
-            background: #FFFFFF;
-            border: 1px solid #AA9C9C;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 10px;
+        body {
+            background: black;
+            color: white;
         }
-        .text{
+
+        .questionBox {
+            box-sizing: border-box;
             position: absolute;
-            width: 418px;
-            height: 58px;
-            left: 511px;
-            top: 355px;
+            width: 984px;
+            height: 92px;
+            left: 228px;
+            color: white;
+            top: 280px;
+            background: transparent;
+            border: 2px solid #FFFFFF;
+            /*box-shadow: 0px 4px 31px 15px #00543C;*/
+            border-radius: 20px;
+        }
 
-            /* Title */
-
+        h1 {
+            position: absolute;
+            width: 660px;
+            height: 86px;
+            left: 470px;
+            top: 140px;
             font-family: 'Recursive';
             font-style: normal;
             font-weight: 700;
             font-size: 64px;
             line-height: 90%;
-            /* identical to box height, or 58px */
-
+            /* or 86px */
             display: flex;
             align-items: center;
             text-align: center;
-
-            color: #000000;
+            /* Ghost */
+            color: #FFFFFF;
             font-variation-settings: 'MONO' 0, 'CASL' 0, 'slnt' 0, 'CRSV' 1;
         }
-        .icon{
-            position: absolute;
-            width: 44px;
-            height: 63px;
-            left: 1126px;
-            top: 480px;
 
-            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-        }
-        .chatBox1{
-            box-sizing: border-box;
-
-            position: absolute;
-            width: 929px;
-            height: 82px;
-            left: 255px;
-            top: 471px;
-
-            background: #FFFFFF;
-            border: 1px solid #AA9C9C;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 10px;
+        .text {
+            color: white;
+            font-size: 50px;
         }
     </style>
+{% endblock %}
+
+{% block body %}
+    <h1>Ask Question:</h1>
     <form action="/answer" method="post">
-        <input type="text" name='Question' class="questionBOX" style="font-size: 50px">
+        <input type="text" name='Question' class="questionBox" style="font-size: 50px;">
     </form>
-    <div class="text">Ask Question:</div>
-    <img src="{{ url_for('static', filename='images/Icon.jpg')}}", class="icon">
-</body>
-</html>
+{% endblock %}
