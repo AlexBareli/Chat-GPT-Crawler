@@ -1,6 +1,6 @@
 # Tunnel
 
-> One of two compsigh entries for The Don's Hack 2023
+> One of the two compsigh entries for The Don's Hack 2023
 
 ---
 
